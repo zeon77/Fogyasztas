@@ -27,24 +27,76 @@
     <p>Megjegyzés: Ha a fogyasztás F és az üzemanyagtartály térfogata V, akkor az autó egy tank benzinnel V*100/F kilométert tesz meg.</p>
     
     <hr>
-    <h3>Megoldás</h3>
+    <p>
+      Lehetőségek:
+      <ul>
+        <li><code>submit</code> típusú gomb elküldi az űrlapot, úrajtöltődik az oldal, és eltűnnek a beírt értékek, ezért gondoskodni kell a küldés megakadályozásáról</li>
+        <li>sima <code>button</code> típusú gomb használatával, ami nem küldi el az űrlapot</li>
+      </ul>
+    </p>
+    <h3>Megoldás 1.</h3>
+    <p>
+      <code>onclick</code> esemény használatával, és a <code>szamolas1();</code> függvényből való <code>hamis (false)</code> érték visszaadásával.
+    </p>
     <div class="form">
       <form>
-        <label for="fogyasztas">Fogyasztás:</label>
-        <input type="text" name="fogyasztas" id="fogyasztas"> L/100km
+        <label for="fogyasztas1">Fogyasztás:</label>
+        <input type="text" name="fogyasztas1" id="fogyasztas1"> L/100km
         <br>
-        <label for="tank">Üzemanyagtartály:</label>
-        <input type="text" name="tank" id="tank"> L
+        <label for="tank1">Üzemanyagtartály:</label>
+        <input type="text" name="tank1" id="tank1"> L
         <br>
-        <label for="ut">Út:</label>
-        <input type="text" name="ut" id="ut"> km
+        <label for="ut1">Út:</label>
+        <input type="text" name="ut1" id="ut1"> km
         <br>
-        <input type="button" value="Számol" id="szamol">
+        <input type="submit" value="Számol" onclick="return szamolas1();">
       </form>
     </div>
-    
-    <p id="megoldas">?</p>
+    <p id="megoldas1" class="megoldas">?</p>
 
+    <hr>
+    <h3>Megoldás 2.</h3>
+    <p>
+      <code>addEventListener()</code> és <code>preventDefault()</code> függvények használatával.
+    </p>
+    <div class="form">
+      <form>
+        <label for="fogyasztas2">Fogyasztás:</label>
+        <input type="text" name="fogyasztas2" id="fogyasztas2"> L/100km
+        <br>
+        <label for="tank2">Üzemanyagtartály:</label>
+        <input type="text" name="tank2" id="tank2"> L
+        <br>
+        <label for="ut2">Út:</label>
+        <input type="text" name="ut2" id="ut2"> km
+        <br>
+        <input type="submit" value="Számol" id="szamolas2">
+      </form>
+    </div>
+
+    <p id="megoldas2" class="megoldas">?</p>
+
+    <hr>
+    <h3>Megoldás 3.</h3>
+    <p>
+      sima <code>button</code> típusú gomb használatával
+    </p>
+    <div class="form">
+      <form>
+        <label for="fogyasztas3">Fogyasztás:</label>
+        <input type="text" name="fogyasztas3" id="fogyasztas3"> L/100km
+        <br>
+        <label for="tank3">Üzemanyagtartály:</label>
+        <input type="text" name="tank3" id="tank3"> L
+        <br>
+        <label for="ut3">Út:</label>
+        <input type="text" name="ut3" id="ut3"> km
+        <br>
+        <input type="button" value="Számol" id="szamolas3">
+      </form>
+    </div>
+
+    <p id="megoldas3" class="megoldas">?</p>
   </div>
 
   <script src="script.js"></script>
